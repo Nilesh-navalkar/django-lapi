@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="mss">
+    {% for m in messages %}
+    <h5>{{m}}</h5>
+    {% endfor %}
+<div class="container">
+	<div class="row" >
+        {% for i in data %}
+        <div class="col-lg-4">
+            <div class="card card-margin" style="margin-top:5px;">
+                <div class="card-header no-border">
+                    <h5 class="card-title">{{i.name}}</h5>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div class="widget-49-title-wrapper">
+                            <div class="widget-49-date-primary">
+                                <span class="widget-49-date-day"><b>match type</b> : {{i.matchType}}</span>
+                            </div>
+                            <div class="widget-49-date-primary">
+                                <span class="widget-49-date-day"><b>venue :</b> {{i.venue}}</span>
+                            </div>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title"><b>score :</b></span>
+                            </div>
+                        </div>
+                        <ul class="widget-49-meeting-points">
+                            {% for k in i.score %}
+                            <li class="widget-49-meeting-item"><span><b>{{k.inning}}</b> : {{k.r}}/{{k.w}} in {{k.o}} overs </span></li>
+                            {% endfor %}
+                        </ul>
+                        <div class="widget-49-meeting-action">
+                            <p  class="btn btn-sm btn-flash-border-primary"><b>{{i.status}}</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+{% endblock %}

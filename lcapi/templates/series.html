@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="mss">
+    {% for m in messages %}
+    <h5>{{m}}</h5>
+    {% endfor %}
+</div>
+{% for i in data %}
+<section class="light">
+	<div class="container py-4">
+		<article class="postcard dark blue">
+
+			<div class="postcard__text">
+				<h1 class="postcard__title blue">{{i.name}}</h1>
+				<div class="postcard__subtitle small">
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">
+                    <p>start date : {{i.startDate}}</P>
+                    <p>end date : {{i.endDate}}</P>
+                    <p>no. of matches : {{i.matches}}</P>
+                </div>
+			</div>
+		</article>
+	</div>
+</section>
+{% endfor %}
+{% endblock %}

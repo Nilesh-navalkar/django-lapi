@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="mss">
+    {% for m in messages %}
+    <h5>{{m}}</h5>
+    {% endfor %}
+    <div class="container">
+        <div class="row" >
+
+    {% for i in data %}
+    <div class="col-lg-4">
+        <div class="card card-margin" style="margin-top:5px;">
+            <div class="card-header no-border">
+                <h5 class="card-title">{{i.name}}</h5>
+            </div>
+            <div class="card-body pt-0">
+                <div class="widget-49-meeting-action">
+                    <!--<p  class="btn btn-sm btn-flash-border-primary"><img src='{{i.playerImg}}'></p>-->
+                </div>
+                <div class="widget-49">
+                    <div class="widget-49-title-wrapper">
+                        <div class="widget-49-date-primary">
+                            <span class="widget-49-date-day"><b>role : </b> : {{i.role}}</span>
+                        </div>
+                        <div class="widget-49-date-primary">
+                            <span class="widget-49-date-day"><b>Batting style :</b> {{i.battingStyle}}</span>
+                        </div>
+                        <div class="widget-49-date-primary">
+                            <span class="widget-49-date-day"><b>Bowling style :</b> {{i.bowlingStyle}}</span>
+                        </div>
+                        <div class="widget-49-date-primary">
+                            <span class="widget-49-date-day"><b>Country :</b> {{i.country}}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
