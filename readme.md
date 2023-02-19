@@ -5,3 +5,11 @@ in case hit limit reached :
 
 generate new email for api key : https://temp-mail.org/en/
 
+current games:
+
+
+series info:
+
+
+players info:
+
